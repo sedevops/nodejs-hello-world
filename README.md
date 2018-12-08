@@ -1,3 +1,5 @@
+[![PushTrain build](http://localhost:90/badge/sedevops/nodejs-hello-world/8.svg)](https://api.github.com/repos/sedevops/nodejs-hello-world) [![Managed by PushTrain](http://localhost:90/badge-text/managed_by-PushTrain-F17E43.svg)](https://swiftengine.io)
+
 # nodejs-hello-world
 Hello World sample
 
