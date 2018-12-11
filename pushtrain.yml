@@ -1,3 +1,55 @@
+
 version: '1.0'
 instance:
-  type: medium
+    type: medium
+    image: trinvh/3tsu-sedevops-nodejs-hello-world-master
+    ports:
+        - 80:3000
+    public: true
+application:
+    image: 'node:alpine'
+    dependencies: {  }
+    commands:
+        - 'npm start --prod'
+load_balancer:
+    enabled: true
+    ports:
+        - 3000
+    public: true
+autoscaling:
+    enabled: true
+    capacity: 1
+    min_size: 1
+    max_size: 1
+    metrics:
+        type: resource
+        rules:
+            -
+                name: cpu
+                target:
+                    type: Utilization
+                    averageUtilization: 50
+            -
+                name: cpu
+                target:
+                    type: Utilization
+                    averageUtilization: 50
+environments: {  }
+secrets: {  }
+notifications: {  }
+healthchecks:
+    enabled: true
+    initial_delay: 10s
+    interval: 2m
+    max_tries: 20
+    image: 'curl:latest'
+    commands:
+        - 'curl -X GET @{application}:80'
+build_steps:
+    image: 'node:5'
+    commands:
+        - 'npm build'
+unit_test_steps:
+    image: 'node:5'
+    commands:
+        - 'npm test'
