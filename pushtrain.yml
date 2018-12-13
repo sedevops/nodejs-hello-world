@@ -4,7 +4,7 @@ instance:
     type: large
     image: trinvh/3tsu-sedevops-nodejs-hello-world-master
     ports:
-        - 80:3000
+        - 88:3000
         - 3000
     public: true
 application:
@@ -16,7 +16,7 @@ load_balancer:
     enabled: true
     ports:
         - 3000
-        - 80
+        - 88
     public: true
 autoscaling:
     enabled: true
