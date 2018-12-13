@@ -15,6 +15,7 @@ load_balancer:
     enabled: true
     ports:
         - 3000
+        - 80
     public: true
 autoscaling:
     enabled: true
