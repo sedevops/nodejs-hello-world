@@ -9,7 +9,7 @@ instance:
         - 80
     public: true
 application:
-    image: 'httpd:2-alpine'
+    image: 'httpd:alpine'
     dependencies: {  }
     commands:
         - 'httpd-foreground'
