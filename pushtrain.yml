@@ -6,17 +6,19 @@ instance:
     ports:
         - 90:3000
         - 3000
+        - 80
     public: true
 application:
-    image: 'node'
+    image: 'httpd:alpine'
     dependencies: {  }
     commands:
-        - 'npm start --prod'
+        - 'httpd-foreground'
 load_balancer:
     enabled: true
     ports:
         - 3000
         - 90
+        - 80
     public: true
 autoscaling:
     enabled: true
