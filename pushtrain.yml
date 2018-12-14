@@ -20,9 +20,9 @@ load_balancer:
     public: true
 autoscaling:
     enabled: true
-    capacity: 1
+    capacity: 2
     min_size: 1
-    max_size: 1
+    max_size: 10
     metrics:
         type: resource
         rules:
