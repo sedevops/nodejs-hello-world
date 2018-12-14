@@ -8,7 +8,7 @@ instance:
         - 3000
     public: true
 application:
-    image: 'node:alpine'
+    image: 'node'
     dependencies: {  }
     commands:
         - 'npm start --prod'
