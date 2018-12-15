@@ -1,8 +1,7 @@
 
 version: '1.0'
 instance:
-    type: large
-    image: trinvh/3tsu-sedevops-nodejs-hello-world-master
+    type: nano
     ports:
         - 90:3000
         - 3000
@@ -25,35 +24,3 @@ autoscaling:
     capacity: 2
     min_size: 1
     max_size: 10
-    metrics:
-        type: resource
-        rules:
-            -
-                name: cpu
-                target:
-                    type: Utilization
-                    averageUtilization: 50
-            -
-                name: cpu
-                target:
-                    type: Utilization
-                    averageUtilization: 50
-environments: {  }
-secrets: {  }
-notifications: {  }
-healthchecks:
-    enabled: true
-    initial_delay: 10s
-    interval: 2m
-    max_tries: 20
-    image: 'curl:latest'
-    commands:
-        - 'curl -X GET @{application}:80'
-build_steps:
-    image: 'node:5'
-    commands:
-        - 'npm build'
-unit_test_steps:
-    image: 'node:5'
-    commands:
-        - 'npm test'
