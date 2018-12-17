@@ -21,6 +21,6 @@ load_balancer:
     public: true
 autoscaling:
     enabled: true
-    capacity: 2
+    capacity: 1
     min_size: 1
-    max_size: 10
+    max_size: 5
