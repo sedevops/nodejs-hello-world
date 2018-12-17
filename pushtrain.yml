@@ -8,10 +8,10 @@ instance:
         - 5000
     public: true
 application:
-    image: 'httpd:alpine'
+    image: 'node:alpine'
     dependencies: {  }
     commands:
-        - 'httpd-foreground'
+        - 'npm start'
 load_balancer:
     enabled: true
     ports:
