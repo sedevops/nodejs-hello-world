@@ -3,7 +3,7 @@ var http = require('http');
 var server = http.createServer(function(request, response) {
 
     response.writeHead(200, {"Content-Type": "text/plain"});
-    response.end("Are you seeing the changes with updates 1?");
+    response.end("Are you seeing the changes with updates 2?");
 
 });
 
